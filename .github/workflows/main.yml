@@ -1,8 +1,6 @@
 name: ClashX
 
 on:
-  push:
-    tags: [ v* ]
   workflow_dispatch:
 
 jobs:
@@ -11,7 +9,7 @@ jobs:
     env:
       MIHOMO_TAG: v1.19.30
       GH_TOKEN: ${{ github.token }}
-      
+
     steps:
 
     - uses: actions/checkout@v6
@@ -20,96 +18,31 @@ jobs:
 
     - name: build infos
       run: |
-        /usr/libexec/PlistBuddy -c "Set CFBundleVersion $(git rev-list --count origin/master..origin/meta)" ClashX/Info.plist
-        /usr/libexec/PlistBuddy -c "Set CFBundleShortVersionString $(git describe --tags --abbrev=0)" ClashX/Info.plist
+        /usr/libexec/PlistBuddy -c "Set CFBundleVersion $(git rev-list --count HEAD)" ClashX/Info.plist
+        /usr/libexec/PlistBuddy -c "Set CFBundleShortVersionString $(git describe --tags --abbrev=0 2>/dev/null || echo '1.0.0')" ClashX/Info.plist
         /usr/libexec/PlistBuddy -c "Add coreVersion string $(ls clash.meta | grep -m1 "" | sed -ne 's/.*64-\(.*\).gz/\1/p')" ClashX/Info.plist
-        /usr/libexec/PlistBuddy -c "Add gitBranch string $GITHUB_REF_NAME" ClashX/Info.plist
-        /usr/libexec/PlistBuddy -c "Add gitCommit string ${GITHUB_SHA::7}" ClashX/Info.plist
         /usr/libexec/PlistBuddy -c "Add buildTime string $(date +%Y-%m-%d\ %H:%M)" ClashX/Info.plist
 
-        /usr/libexec/PlistBuddy -c 'Print CFBundleVersion' ClashX/Info.plist
-        /usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' ClashX/Info.plist
-        /usr/libexec/PlistBuddy -c 'Print coreVersion' ClashX/Info.plist
-        /usr/libexec/PlistBuddy -c 'Print gitBranch' ClashX/Info.plist
-        /usr/libexec/PlistBuddy -c 'Print gitCommit' ClashX/Info.plist
-        /usr/libexec/PlistBuddy -c 'Print buildTime' ClashX/Info.plist
-        
     - name: install deps
       run: |
         bash install_dependency.sh "$MIHOMO_TAG"
         xcodebuild -resolvePackageDependencies -project ClashX.xcodeproj
-    - name: build
+
+    - name: build (unsigned)
       run: |
-        xcodebuild archive -project ClashX.xcodeproj -scheme ClashX\ Meta -archivePath archive/ClashX.xcarchive -showBuildTimingSummary -allowProvisioningUpdates
+        xcodebuild archive \
+          -project ClashX.xcodeproj \
+          -scheme "ClashX Meta" \
+          -archivePath archive/ClashX.xcarchive \
+          CODE_SIGN_IDENTITY="" \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGNING_ALLOWED=NO
 
     - name: create zip
       run: ditto -c -k --sequesterRsrc --keepParent archive/ClashX.xcarchive/Products/Applications/ClashX\ Meta.app "ClashX Meta.zip"
 
-
     - name: upload Artifact
-      uses: actions/upload-artifact@v7
-      if: "!startsWith(github.ref, 'refs/tags/')"
+      uses: actions/upload-artifact@v4
       with:
-        name: "ClashX Meta.zip"
-        path: "*.zip"
-
-    - name: load sparkle-repo
-      uses: actions/checkout@v6
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        ref: sparkle
-        path: 'sparkle-repo'
-
-    - name: preprocess sparkle-repo
-      if: startsWith(github.ref, 'refs/tags/')
-      run: |
-        rm -f sparkle-repo/*.delta
-        rm -rf sparkle-repo/old_updates
-
-        cd sparkle-repo
-        ruby <<'RUBY'
-        archives = Dir.glob('ClashX Meta *.zip')
-        sorted_archives = archives.sort_by do |archive|
-          version = archive[/ClashX Meta (.+)\.zip\z/, 1] || archive
-          Gem::Version.new(version.sub(/\Av/, ''))
-        end
-
-        if sorted_archives.length > 2
-          sorted_archives[0...-2].each { |archive| File.delete(archive) }
-        end
-        RUBY
-        cd ..
-
-    - name: update sparkle-repo
-      if: startsWith(github.ref, 'refs/tags/')
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-        cp "ClashX Meta.zip" "sparkle-repo/ClashX Meta $GITHUB_REF_NAME.zip"
-        
-        brew install sparkle
-        echo '${{ secrets.ED_KEY }}' | $(brew --prefix)/Caskroom/sparkle/2.*/bin/generate_appcast --maximum-deltas 2 --ed-key-file - sparkle-repo
-        
-        cd sparkle-repo
-        git checkout --orphan temp-sparkle
-
-        git add -A
-        git commit -m "Sparkle updates - $GITHUB_REF_NAME"
-      
-
-        git branch -D sparkle
-        git checkout -b sparkle
-        git branch -D temp-sparkle
-
-        git push --force-with-lease origin sparkle
-
-    - name: upload build to github
-      uses: softprops/action-gh-release@v3
-      if: startsWith(github.ref, 'refs/tags/')
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        generate_release_notes: true
-        files: |
-          ClashX Meta.zip
+        name: "ClashX-Meta-unsigned"
+        path: "ClashX Meta.zip"
