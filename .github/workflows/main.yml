@@ -16,17 +16,22 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: setup Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.26.x'
+
+    - name: install deps
+      run: |
+        bash install_dependency.sh
+        xcodebuild -resolvePackageDependencies -project ClashX.xcodeproj
+
     - name: build infos
       run: |
         /usr/libexec/PlistBuddy -c "Set CFBundleVersion $(git rev-list --count HEAD)" ClashX/Info.plist
         /usr/libexec/PlistBuddy -c "Set CFBundleShortVersionString $(git describe --tags --abbrev=0 2>/dev/null || echo '1.0.0')" ClashX/Info.plist
         /usr/libexec/PlistBuddy -c "Add coreVersion string $(ls clash.meta | grep -m1 "" | sed -ne 's/.*64-\(.*\).gz/\1/p')" ClashX/Info.plist
         /usr/libexec/PlistBuddy -c "Add buildTime string $(date +%Y-%m-%d\ %H:%M)" ClashX/Info.plist
-
-    - name: install deps
-      run: |
-        bash install_dependency.sh
-        xcodebuild -resolvePackageDependencies -project ClashX.xcodeproj
 
     - name: build (unsigned)
       run: |
