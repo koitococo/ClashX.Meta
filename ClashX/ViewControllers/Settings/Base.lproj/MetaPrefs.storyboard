@@ -190,108 +190,6 @@
                                             </constraints>
                                         </view>
                                     </box>
-                                    <box borderType="line" title="Alpha Core" translatesAutoresizingMaskIntoConstraints="NO" id="jTG-JZ-aJa">
-                                        <rect key="frame" x="0.0" y="36" width="438" height="112"/>
-                                        <view key="contentView" id="Xn6-sq-HY0">
-                                            <rect key="frame" x="0.0" y="0.0" width="438" height="100"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <gridView xPlacement="leading" yPlacement="top" rowAlignment="none" rowSpacing="12" columnSpacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WT1-lz-2cY">
-                                                    <rect key="frame" x="20" y="10" width="398" height="80"/>
-                                                    <rows>
-                                                        <gridRow height="16" id="IsL-fW-4UR"/>
-                                                        <gridRow height="16" id="pTu-Kx-Kht"/>
-                                                        <gridRow yPlacement="fill" id="fHm-jM-gt5"/>
-                                                    </rows>
-                                                    <columns>
-                                                        <gridColumn id="u8z-TL-hvE"/>
-                                                        <gridColumn id="1Gr-S3-ZBU"/>
-                                                    </columns>
-                                                    <gridCells>
-                                                        <gridCell row="IsL-fW-4UR" column="u8z-TL-hvE" id="COH-4g-UZ1">
-                                                            <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dqT-AG-7Ec">
-                                                                <rect key="frame" x="0.0" y="64" width="116" height="16"/>
-                                                                <buttonCell key="cell" type="check" title="Use alpha meta" bezelStyle="regularSquare" imagePosition="left" inset="2" id="iYJ-Ou-a1L">
-                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                                    <font key="font" metaFont="system"/>
-                                                                </buttonCell>
-                                                                <connections>
-                                                                    <action selector="useAlphaMeta:" target="bU7-R8-ocO" id="t8g-P5-puh"/>
-                                                                </connections>
-                                                            </button>
-                                                        </gridCell>
-                                                        <gridCell row="IsL-fW-4UR" column="1Gr-S3-ZBU" id="c1k-yH-sOx"/>
-                                                        <gridCell row="pTu-Kx-Kht" column="u8z-TL-hvE" id="qXc-Dd-A2g">
-                                                            <textField key="contentView" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-n3-FuW">
-                                                                <rect key="frame" x="-2" y="36" width="57" height="16"/>
-                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Version: " id="Puz-ig-bL1">
-                                                                    <font key="font" metaFont="system"/>
-                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                </textFieldCell>
-                                                            </textField>
-                                                        </gridCell>
-                                                        <gridCell row="pTu-Kx-Kht" column="1Gr-S3-ZBU" id="FUF-Rt-7ec">
-                                                            <textField key="contentView" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yKt-RT-uZL">
-                                                                <rect key="frame" x="134" y="36" width="37" height="16"/>
-                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="HK1-lo-81Z">
-                                                                    <font key="font" usesAppearanceFont="YES"/>
-                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                </textFieldCell>
-                                                            </textField>
-                                                        </gridCell>
-                                                        <gridCell row="fHm-jM-gt5" column="u8z-TL-hvE" id="6dC-n9-Oqw">
-                                                            <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UWj-Su-skJ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="114" height="24"/>
-                                                                <buttonCell key="cell" type="push" title="Show in Finder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CD3-zN-LVL">
-                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                    <font key="font" metaFont="system"/>
-                                                                </buttonCell>
-                                                                <connections>
-                                                                    <action selector="showAlphaInFinder:" target="bU7-R8-ocO" id="5W9-yP-GWK"/>
-                                                                </connections>
-                                                            </button>
-                                                        </gridCell>
-                                                        <gridCell row="fHm-jM-gt5" column="1Gr-S3-ZBU" id="7FM-zT-NVR">
-                                                            <stackView key="contentView" distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hlf-QW-sRt">
-                                                                <rect key="frame" x="136" y="0.0" width="93" height="24"/>
-                                                                <subviews>
-                                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SRr-f9-XRY">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="69" height="24"/>
-                                                                        <buttonCell key="cell" type="push" title="Update" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bW5-h7-VSK">
-                                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                            <font key="font" metaFont="system"/>
-                                                                        </buttonCell>
-                                                                        <connections>
-                                                                            <action selector="updateAlpha:" target="bU7-R8-ocO" id="myL-hz-rqF"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                    <progressIndicator wantsLayer="YES" maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="ZLW-Hh-cDO">
-                                                                        <rect key="frame" x="77" y="4" width="16" height="16"/>
-                                                                    </progressIndicator>
-                                                                </subviews>
-                                                                <visibilityPriorities>
-                                                                    <integer value="1000"/>
-                                                                    <integer value="1000"/>
-                                                                </visibilityPriorities>
-                                                                <customSpacing>
-                                                                    <real value="3.4028234663852886e+38"/>
-                                                                    <real value="3.4028234663852886e+38"/>
-                                                                </customSpacing>
-                                                            </stackView>
-                                                        </gridCell>
-                                                    </gridCells>
-                                                </gridView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="WT1-lz-2cY" firstAttribute="leading" secondItem="Xn6-sq-HY0" secondAttribute="leading" constant="20" symbolic="YES" id="GmL-f3-XAn"/>
-                                                <constraint firstItem="WT1-lz-2cY" firstAttribute="top" secondItem="Xn6-sq-HY0" secondAttribute="top" constant="10" id="Mdb-CR-aEN"/>
-                                                <constraint firstAttribute="bottom" secondItem="WT1-lz-2cY" secondAttribute="bottom" constant="10" id="bzm-du-Ss4"/>
-                                                <constraint firstAttribute="trailing" secondItem="WT1-lz-2cY" secondAttribute="trailing" constant="20" symbolic="YES" id="oa5-OT-uI5"/>
-                                            </constraints>
-                                        </view>
-                                    </box>
                                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TTD-4f-gyL">
                                         <rect key="frame" x="18" y="0.0" width="402" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Requires restart ClashX Meta to take effect." id="wIw-Pj-t2i">
@@ -306,8 +204,6 @@
                                     <constraint firstAttribute="trailing" secondItem="Lcd-RJ-vG1" secondAttribute="trailing" id="9kN-Nw-mb0"/>
                                     <constraint firstAttribute="trailing" secondItem="KHD-s8-L0n" secondAttribute="trailing" id="FHY-Iu-vcs"/>
                                     <constraint firstItem="Lcd-RJ-vG1" firstAttribute="leading" secondItem="0gk-BB-Gdf" secondAttribute="leading" id="IT4-8w-3dS"/>
-                                    <constraint firstAttribute="trailing" secondItem="jTG-JZ-aJa" secondAttribute="trailing" id="Sws-G0-fci"/>
-                                    <constraint firstItem="jTG-JZ-aJa" firstAttribute="leading" secondItem="0gk-BB-Gdf" secondAttribute="leading" id="Vka-wv-da2"/>
                                     <constraint firstAttribute="trailing" secondItem="TTD-4f-gyL" secondAttribute="trailing" constant="20" id="h6f-oT-QRr"/>
                                     <constraint firstItem="TTD-4f-gyL" firstAttribute="leading" secondItem="0gk-BB-Gdf" secondAttribute="leading" constant="20" id="hwO-If-HLk"/>
                                 </constraints>
@@ -315,10 +211,8 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
-                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -333,14 +227,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="alphaVersionTextField" destination="yKt-RT-uZL" id="A2m-kO-WMQ"/>
                         <outlet property="hideUnselectableButton" destination="Wig-IX-1hV" id="9dI-B3-Tbe"/>
                         <outlet property="restartTextField" destination="TTD-4f-gyL" id="gDw-gY-aSm"/>
-                        <outlet property="showAlphaButton" destination="UWj-Su-skJ" id="v29-ZT-4mA"/>
                         <outlet property="tunDNSTextField" destination="YuJ-wO-puO" id="4xw-eF-vnz"/>
-                        <outlet property="updateButton" destination="SRr-f9-XRY" id="suh-eD-eh8"/>
-                        <outlet property="updateProgressIndicator" destination="ZLW-Hh-cDO" id="Ojv-7K-OyZ"/>
-                        <outlet property="useAlphaButton" destination="dqT-AG-7Ec" id="vYv-Uc-vuI"/>
                         <outlet property="useSwiftuiButton" destination="g5a-f5-3hq" id="uRM-Z9-Zeg"/>
                         <outlet property="useXDButton" destination="uY1-el-AeU" id="HZy-K3-ZU5"/>
                         <outlet property="useYacdButton" destination="Fty-b5-ZE7" id="6aE-xC-JX7"/>

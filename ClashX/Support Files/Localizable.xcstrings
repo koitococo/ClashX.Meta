@@ -127,28 +127,6 @@
         }
       }
     },
-    "Alpha Meta core Warning" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "If you don't know what you're doing, never turn this switch on.\nRunning Meta Core without any authentication under 'su' privileges may damage your mac."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "如果你不知道你在做什么, 请绝对不要打开这个开关.\n在 'su' 权限下运行未经验证的 Meta 核心, 可能损坏你的 mac."
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alpha Meta 核心警告"
-          }
-        }
-      }
-    },
     "Apply and Quit" : {
       "localizations" : {
         "zh-Hans" : {
@@ -2712,22 +2690,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "更新所有提供商"
-          }
-        }
-      }
-    },
-    "Update Alpha Meta core" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新 Alpha Meta 内核"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新 Alpha Meta 核心"
           }
         }
       }

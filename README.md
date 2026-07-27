@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://github.com/MetaCubeX/mihomo/raw/Meta/Meta.png" alt="Clash" width="200">
+  <img src="https://github.com/koitococo/mihomo/raw/Meta/Meta.png" alt="Clash" width="200">
   <br>
   ClashX Meta
   <br>

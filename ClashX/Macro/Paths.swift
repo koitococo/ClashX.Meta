@@ -38,11 +38,6 @@ enum Paths {
 		return FileManager.default.fileExists(atPath: path) ? path : nil
     }
 
-    static func alphaCorePath() -> URL? {
-		Paths
-			.applicationSupportDirectory()?
-			.appendingPathComponent(kDefauleMetaCoreName)
-    }
 
 	static func applicationSupportDirectory() -> URL? {
 		FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)

@@ -25,7 +25,7 @@ jobs:
 
     - name: install deps
       run: |
-        bash install_dependency.sh "$MIHOMO_TAG"
+        bash install_dependency.sh
         xcodebuild -resolvePackageDependencies -project ClashX.xcodeproj
 
     - name: build (unsigned)

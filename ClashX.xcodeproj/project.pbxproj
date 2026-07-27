@@ -109,7 +109,6 @@
 		01F335E42AD10D0B0048AF77 /* SpeedUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4991D22F2A564DDC00978143 /* SpeedUtils.swift */; };
 		01F335E52AD10D0B0048AF77 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496BDEDF21196F1E00C5207F /* Logger.swift */; };
 		01F335E62AD10D0B0048AF77 /* NSView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905A2C92A20841B00AEDA2E /* NSView+Layout.swift */; };
-		01F335E82AD10D0B0048AF77 /* AlphaMetaDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016BEAAF29D80102001586C5 /* AlphaMetaDownloader.swift */; };
 		01F335E92AD10D0B0048AF77 /* NetworkChangeNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D176A62355FE680093DD7B /* NetworkChangeNotifier.swift */; };
 		01F335EA2AD10D0B0048AF77 /* GlobalShortCutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905A2C42A2058B000AEDA2E /* GlobalShortCutViewController.swift */; };
 		01F335EB2AD10D0B0048AF77 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913C82221157D0200F6B87C /* Notification.swift */; };
@@ -231,7 +230,6 @@
 		015F1E90288E42A50052B20A /* ClashMetaConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashMetaConfig.swift; sourceTree = "<group>"; };
 		0162E74D2864B818007218A6 /* com.metacubex.ClashX.ProxyConfigHelper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "com.metacubex.ClashX.ProxyConfigHelper-Bridging-Header.h"; sourceTree = "<group>"; };
 		0162E74E2864B819007218A6 /* MetaTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaTask.swift; sourceTree = "<group>"; };
-		016BEAAF29D80102001586C5 /* AlphaMetaDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaMetaDownloader.swift; sourceTree = "<group>"; };
 		018F88F8286DD0CB004DD0F7 /* DualTitleMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualTitleMenuItem.swift; sourceTree = "<group>"; };
 		0190155B2FC7EB7000EB077C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		0190155D2FC7EB7000EB077C /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/Main.xcstrings; sourceTree = "<group>"; };
@@ -646,7 +644,6 @@
 				492C4868210EE6B9004554A0 /* ApiRequest.swift */,
 				01F335F82F7F9E8A00A1B2C3 /* ApiRequestTransport.swift */,
 				015F1E90288E42A50052B20A /* ClashMetaConfig.swift */,
-				016BEAAF29D80102001586C5 /* AlphaMetaDownloader.swift */,
 				01FBC62F2B9C2B0800810BFF /* ClashProcess.swift */,
 			);
 			path = General;
@@ -1040,7 +1037,6 @@
 				01F335E52AD10D0B0048AF77 /* Logger.swift in Sources */,
 				01D567E62AD158B600CDA0AE /* MetaPrefsViewController.swift in Sources */,
 				01F335E62AD10D0B0048AF77 /* NSView+Layout.swift in Sources */,
-				01F335E82AD10D0B0048AF77 /* AlphaMetaDownloader.swift in Sources */,
 				01F335E92AD10D0B0048AF77 /* NetworkChangeNotifier.swift in Sources */,
 				01F335EA2AD10D0B0048AF77 /* GlobalShortCutViewController.swift in Sources */,
 				0106179F2AF38EFA005C7877 /* Command.swift in Sources */,

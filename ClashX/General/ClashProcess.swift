@@ -111,15 +111,8 @@ actor ClashProcess {
 	private static func resolveLaunchPath(md5: String) -> (path: String?, err: String?) {
 		Logger.log("Get launchPath")
 		
-		guard let alphaCorePath = Paths.alphaCorePath(),
-			  let corePath = Paths.defaultCorePath() else {
+		guard let corePath = Paths.defaultCorePath() else {
 			return (nil, "Paths error")
-		}
-		
-		if ConfigManager.useAlphaCore {
-			if let _ = verifyCoreFile(alphaCorePath.path) {
-				return (alphaCorePath.path, nil)
-			}
 		}
 		
 		let fm = FileManager.default

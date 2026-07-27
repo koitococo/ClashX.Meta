@@ -734,13 +734,13 @@
       }
     },
     "Bej-j7-KKV.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"https://github.com/MetaCubeX/mihomo\"; ObjectID = \"Bej-j7-KKV\"; Note = \"#bc-ignore!\";",
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"https://github.com/koitococo/mihomo\"; ObjectID = \"Bej-j7-KKV\"; Note = \"#bc-ignore!\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "https://github.com/MetaCubeX/mihomo"
+            "value" : "https://github.com/koitococo/mihomo"
           }
         }
       }
@@ -1587,18 +1587,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "減少通知"
-          }
-        }
-      }
-    },
-    "JYf-zC-xoj.title" : {
-      "comment" : "Class = \"NSMenu\"; title = \"Alpha Core\"; ObjectID = \"JYf-zC-xoj\";",
-      "extractionState" : "manual",
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alpha 内核"
           }
         }
       }
@@ -2829,18 +2817,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "全局快捷方式"
-          }
-        }
-      }
-    },
-    "WNb-4C-MWu.title" : {
-      "comment" : "Class = \"NSMenuItem\"; title = \"Alpha Core\"; ObjectID = \"WNb-4C-MWu\";",
-      "extractionState" : "manual",
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alpha 内核"
           }
         }
       }

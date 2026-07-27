@@ -196,9 +196,4 @@ extension ConfigManager {
 		}
 	}
 	
-	static var useAlphaCore: Bool = UserDefaults.standard.object(forKey: "useAlphaCore") as? Bool ?? false {
-		didSet {
-			UserDefaults.standard.set(useAlphaCore, forKey: "useAlphaCore")
-		}
-	}
 }

@@ -25,54 +25,6 @@
         }
       }
     },
-    "bW5-h7-VSK.title" : {
-      "comment" : "Class = \"NSButtonCell\"; title = \"Update\"; ObjectID = \"bW5-h7-VSK\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Update"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新"
-          }
-        }
-      }
-    },
-    "CD3-zN-LVL.title" : {
-      "comment" : "Class = \"NSButtonCell\"; title = \"Show in Finder\"; ObjectID = \"CD3-zN-LVL\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Show in Finder"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "在 Finder 中显示"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "在 Finder 中顯示"
-          }
-        }
-      }
-    },
     "D5Y-z6-1SE.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"SwiftUI\"; ObjectID = \"D5Y-z6-1SE\";",
       "extractionState" : "extracted_with_value",
@@ -141,78 +93,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "儀表板："
-          }
-        }
-      }
-    },
-    "HK1-lo-81Z.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Label\"; ObjectID = \"HK1-lo-81Z\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Label"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "标签"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "標籤"
-          }
-        }
-      }
-    },
-    "iYJ-Ou-a1L.title" : {
-      "comment" : "Class = \"NSButtonCell\"; title = \"Use alpha meta\"; ObjectID = \"iYJ-Ou-a1L\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Use alpha meta"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使用 alpha meta"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使用 alpha meta"
-          }
-        }
-      }
-    },
-    "jTG-JZ-aJa.title" : {
-      "comment" : "Class = \"NSBox\"; title = \"Alpha Core\"; ObjectID = \"jTG-JZ-aJa\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Alpha Core"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alpha 核心"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alpha 核心"
           }
         }
       }
@@ -357,30 +237,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yacd-meta"
-          }
-        }
-      }
-    },
-    "Puz-ig-bL1.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Version: \"; ObjectID = \"Puz-ig-bL1\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Version: "
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "版本："
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "版本："
           }
         }
       }

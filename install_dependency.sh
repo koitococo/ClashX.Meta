@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-for cmd in git gh; do
+for cmd in git gh make go; do
     if ! command -v "$cmd" >/dev/null 2>&1; then
         echo "Error: $cmd is not installed."
         exit 1
@@ -18,37 +18,27 @@ download_and_gzip_rule() {
     mv -f "$tmp_rules_dir/$asset_name.gz" "$rules_dir/$asset_name.gz"
 }
 
-mihomo_tag="${1:-${MIHOMO_TAG:-}}"
-if [ -n "$mihomo_tag" ]; then
-    echo "Using mihomo tag: $mihomo_tag"
-else
-    echo "Using mihomo tag: latest"
-fi
-
-echo "Downloading mihomo..."
+echo "Building mihomo from koitococo/mihomo Meta..."
 rm -rf clash.meta
 mkdir clash.meta
-release_ref="$mihomo_tag"
-if [ -z "$release_ref" ]; then
-    release_ref=$(gh release list -R MetaCubeX/mihomo --exclude-pre-releases --limit 1 --json tagName -q '.[0].tagName')
-fi
 
-asset_tag="$release_ref"
+mihomo_build_dir=$(mktemp -d)
+trap 'rm -rf "$mihomo_build_dir"' EXIT
 
-if [ -z "$asset_tag" ]; then
-    echo "Error: failed to resolve mihomo release tag."
-    exit 1
-fi
+git clone --depth 1 --branch Meta https://github.com/koitococo/mihomo.git "$mihomo_build_dir"
+(
+    cd "$mihomo_build_dir"
+    make darwin-amd64 darwin-arm64
+)
 
-gh release download "$release_ref" -R MetaCubeX/mihomo -p "mihomo-darwin-arm64-${asset_tag}.gz" -D clash.meta
-gh release download "$release_ref" -R MetaCubeX/mihomo -p "mihomo-darwin-amd64-${asset_tag}.gz" -D clash.meta
+cp "$mihomo_build_dir/bin/mihomo-darwin-amd64" clash.meta/
+cp "$mihomo_build_dir/bin/mihomo-darwin-arm64" clash.meta/
+rm -rf "$mihomo_build_dir"
+trap - EXIT
 
-echo "Download complete."
+echo "Build complete."
 
-echo "Unzip core files"
 cd clash.meta
-ls
-gzip -d *.gz
 echo "Create Universal core"
 lipo -create -output com.metacubex.ClashX.ProxyConfigHelper.meta mihomo-darwin-amd64* mihomo-darwin-arm64*
 chmod +x com.metacubex.ClashX.ProxyConfigHelper.meta
