@@ -145,6 +145,12 @@ class ConfigManager {
         }
     }
 
+    var hideProxyModeAndGroupsInStatusMenu: Bool = UserDefaults.standard.bool(forKey: "hideProxyModeAndGroupsInStatusMenu") {
+        didSet {
+            UserDefaults.standard.set(hideProxyModeAndGroupsInStatusMenu, forKey: "hideProxyModeAndGroupsInStatusMenu")
+        }
+    }
+
     static func getConfigPath(configName: String) async -> String? {
         if ICloudManager.shared.useICloudRelay.value {
             guard let url = await ICloudManager.shared.getUrl() else {

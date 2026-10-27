@@ -97,6 +97,54 @@
         }
       }
     },
+    "Hpm-Bc-001.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Hide menu bar proxy mode and groups\"; ObjectID = \"Hpm-Bc-001\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hide menu bar proxy mode and groups"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隐藏菜单栏中的代理模式和代理组"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隱藏選單列中的代理模式和代理群組"
+          }
+        }
+      }
+    },
+    "Hpm-Tc-001.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Manage proxy mode and groups in Dashboard.\"; ObjectID = \"Hpm-Tc-001\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manage proxy mode and groups in Dashboard."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通过仪表板管理代理模式和代理组。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "透過儀表板管理代理模式和代理群組。"
+          }
+        }
+      }
+    },
     "JYz-2H-ZNq.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"metacubexd\"; ObjectID = \"JYz-2H-ZNq\";",
       "extractionState" : "extracted_with_value",

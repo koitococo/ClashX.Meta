@@ -11,6 +11,12 @@ import Network
 class MetaPrefsViewController: NSViewController {
 	// Meta Setting
 	@IBOutlet var hideUnselectableButton: NSButton!
+    @IBOutlet var hideProxyModeAndGroupsButton: NSButton!
+
+    @IBAction func hideProxyModeAndGroupsChanged(_ sender: NSButton) {
+        ConfigManager.shared.hideProxyModeAndGroupsInStatusMenu = sender.state == .on
+        MenuItemFactory.applyProxyMenuVisibility()
+    }
 	
 	@IBAction func hideUnselectable(_ sender: NSButton) {
 		var newState = NSControl.StateValue.off
@@ -71,6 +77,7 @@ class MetaPrefsViewController: NSViewController {
         super.viewDidLoad()
 		// Meta Setting
 		hideUnselectableButton.state = .init(rawValue: MenuItemFactory.hideUnselectable)
+        hideProxyModeAndGroupsButton.state = ConfigManager.shared.hideProxyModeAndGroupsInStatusMenu ? .on : .off
 		
 		tunDNSTextField.placeholderString = ConfigManager.defaultTunDNS
 		tunDNSTextField.stringValue = ConfigManager.metaTunDNS

@@ -11,25 +11,27 @@
             <objects>
                 <viewController id="bU7-R8-ocO" customClass="MetaPrefsViewController" customModule="ClashX_Meta" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" misplaced="YES" id="tOy-S4-hL0">
-                        <rect key="frame" x="0.0" y="0.0" width="472" height="461"/>
+                        <rect key="frame" x="0.0" y="0.0" width="472" height="517"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gk-BB-Gdf">
-                                <rect key="frame" x="20" y="20" width="438" height="418"/>
+                                <rect key="frame" x="20" y="20" width="432" height="474"/>
                                 <subviews>
                                     <box borderType="line" title="Meta Setting" translatesAutoresizingMaskIntoConstraints="NO" id="Lcd-RJ-vG1">
-                                        <rect key="frame" x="0.0" y="308" width="438" height="110"/>
+                                        <rect key="frame" x="0.0" y="308" width="432" height="166"/>
                                         <view key="contentView" id="U05-m1-3dj">
-                                            <rect key="frame" x="0.0" y="0.0" width="438" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="432" height="154"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <gridView xPlacement="fill" yPlacement="top" rowAlignment="none" rowSpacing="12" columnSpacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="d0F-qy-EB6">
-                                                    <rect key="frame" x="20" y="10" width="398" height="78"/>
+                                                    <rect key="frame" x="20" y="10" width="392" height="134"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" priority="750" constant="75" id="fyq-n5-2Ix"/>
+                                                        <constraint firstAttribute="height" priority="750" constant="131" id="fyq-n5-2Ix"/>
                                                     </constraints>
                                                     <rows>
                                                         <gridRow id="26k-bz-8yg"/>
+                                                        <gridRow id="Hpm-Rw-001"/>
+                                                        <gridRow id="Hpm-Rw-002"/>
                                                         <gridRow yPlacement="center" id="xtF-Ze-hcM"/>
                                                         <gridRow id="PIc-Wv-hxH"/>
                                                     </rows>
@@ -40,7 +42,7 @@
                                                     <gridCells>
                                                         <gridCell row="26k-bz-8yg" column="MDQ-YN-zJd" headOfMergedCell="2mv-OU-fSM" id="2mv-OU-fSM">
                                                             <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wig-IX-1hV">
-                                                                <rect key="frame" x="0.0" y="62" width="398" height="16"/>
+                                                                <rect key="frame" x="0.0" y="118" width="392" height="16"/>
                                                                 <buttonCell key="cell" type="check" title="Hide unselectable" bezelStyle="regularSquare" imagePosition="left" allowsMixedState="YES" inset="2" id="Koj-ew-y0I">
                                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                     <font key="font" metaFont="system"/>
@@ -51,6 +53,30 @@
                                                             </button>
                                                         </gridCell>
                                                         <gridCell row="26k-bz-8yg" column="UPL-cT-NLz" headOfMergedCell="2mv-OU-fSM" id="vNI-Dq-n1X"/>
+                                                        <gridCell row="Hpm-Rw-001" column="MDQ-YN-zJd" headOfMergedCell="Hpm-Gc-001" id="Hpm-Gc-001">
+                                                            <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hpm-Bt-001">
+                                                                <rect key="frame" x="0.0" y="90" width="392" height="16"/>
+                                                                <buttonCell key="cell" type="check" title="Hide menu bar proxy mode and groups" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Hpm-Bc-001">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="hideProxyModeAndGroupsChanged:" target="bU7-R8-ocO" id="Hpm-Ac-001"/>
+                                                                </connections>
+                                                            </button>
+                                                        </gridCell>
+                                                        <gridCell row="Hpm-Rw-001" column="UPL-cT-NLz" headOfMergedCell="Hpm-Gc-001" id="Hpm-Gc-002"/>
+                                                        <gridCell row="Hpm-Rw-002" column="MDQ-YN-zJd" headOfMergedCell="Hpm-Gc-003" id="Hpm-Gc-003">
+                                                            <textField key="contentView" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hpm-Tf-001">
+                                                                <rect key="frame" x="-2" y="64" width="396" height="14"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Manage proxy mode and groups in Dashboard." id="Hpm-Tc-001">
+                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                        </gridCell>
+                                                        <gridCell row="Hpm-Rw-002" column="UPL-cT-NLz" headOfMergedCell="Hpm-Gc-003" id="Hpm-Gc-004"/>
                                                         <gridCell row="xtF-Ze-hcM" column="MDQ-YN-zJd" id="1fK-KG-TIa">
                                                             <textField key="contentView" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Syy-v6-wb3">
                                                                 <rect key="frame" x="-2" y="30" width="61" height="16"/>
@@ -228,6 +254,7 @@
                     </view>
                     <connections>
                         <outlet property="hideUnselectableButton" destination="Wig-IX-1hV" id="9dI-B3-Tbe"/>
+                        <outlet property="hideProxyModeAndGroupsButton" destination="Hpm-Bt-001" id="Hpm-Ou-001"/>
                         <outlet property="restartTextField" destination="TTD-4f-gyL" id="gDw-gY-aSm"/>
                         <outlet property="tunDNSTextField" destination="YuJ-wO-puO" id="4xw-eF-vnz"/>
                         <outlet property="useSwiftuiButton" destination="g5a-f5-3hq" id="uRM-Z9-Zeg"/>

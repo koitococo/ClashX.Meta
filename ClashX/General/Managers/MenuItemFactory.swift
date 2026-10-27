@@ -28,6 +28,21 @@ class MenuItemFactory {
     static let updateAllProvidersTitle = NSLocalizedString("Update All Providers", comment: "")
 
     // MARK: - Public
+    @MainActor
+    static func applyProxyMenuVisibility() {
+        let hidden = ConfigManager.shared.hideProxyModeAndGroupsInStatusMenu
+        let app = AppDelegate.shared
+        app.proxyModeMenuItem.isHidden = hidden
+        app.separatorLineTop.isHidden = hidden
+        if hidden {
+            updateProxyList(withMenus: [])
+        } else {
+            Task {
+                await recreateProxyMenuItems()
+            }
+        }
+    }
+
 
     @MainActor
     static func refreshExistingMenuItems() async {
@@ -57,6 +72,18 @@ class MenuItemFactory {
 
     @MainActor
     static func refreshMenuItems(mergedData proxyInfo: ClashProxyResp?) async {
+        refreshProxyGroupMenuItems(mergedData: proxyInfo)
+        guard let proxyInfo = proxyInfo else { return }
+        refreshProxyProviderMenuItems(mergedData: proxyInfo)
+        await recreateRuleProvidersMenuItems()
+    }
+
+    @MainActor
+    private static func refreshProxyGroupMenuItems(mergedData proxyInfo: ClashProxyResp?) {
+        guard !ConfigManager.shared.hideProxyModeAndGroupsInStatusMenu else {
+            updateProxyList(withMenus: [])
+            return
+        }
         let leftPadding = AppDelegate.shared.hasMenuSelected()
         guard let proxyInfo = proxyInfo else { return }
 
@@ -108,9 +135,6 @@ class MenuItemFactory {
 
         let items = Array(menuItems.reversed())
         updateProxyList(withMenus: items)
-
-        refreshProxyProviderMenuItems(mergedData: proxyInfo)
-        await recreateRuleProvidersMenuItems()
     }
 
     static func generateSwitchConfigMenuItems() async -> [NSMenuItem] {

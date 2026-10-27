@@ -52,6 +52,10 @@
 
 把图标文件放到 `~/.config/clash.meta/menuImage.png`，然后重启 ClashX。
 
+### 隐藏菜单栏代理模式和代理组
+
+在 Meta 设置中开启隐藏菜单栏代理模式和代理组的开关后，通过 Dashboard 管理代理模式和代理组。此开关默认关闭。
+
 ### 修改默认系统忽略列表
 
 - 菜单 -> Config -> Setting -> Bypass proxy settings for these Hosts & Domains

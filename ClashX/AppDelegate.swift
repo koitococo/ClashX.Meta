@@ -231,6 +231,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 	
     func setupData() {
+        MenuItemFactory.applyProxyMenuVisibility()
+
         ConfigManager.shared
             .showNetSpeedIndicatorObservable.skip(1)
             .bind { _ in
