@@ -230,6 +230,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return state.runtime.tunActive ? .on : .off
     }
 	
+    @MainActor
     func setupData() {
         MenuItemFactory.applyProxyMenuVisibility()
 
