@@ -29,7 +29,9 @@ You can download from the [Release](https://github.com/MetaCubeX/Clash.Meta/rele
   brew install gh
   ```
 
-- Download deps
+- Install [Bun](https://bun.sh/) 1.4.4 to build the bundled Yacd dashboard from [`koitococo/Yacd-meta`](https://github.com/koitococo/Yacd-meta).
+
+- Prepare dependencies and build bundled resources
   ```
   bash install_dependency.sh
   ```

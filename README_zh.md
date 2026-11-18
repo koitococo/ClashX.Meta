@@ -27,7 +27,9 @@
   brew install gh
   ```
 
-- 下载依赖
+- 安装 [Bun](https://bun.sh/) 1.4.4，用于从 [`koitococo/Yacd-meta`](https://github.com/koitococo/Yacd-meta) 源码构建内置 Yacd 面板。
+
+- 准备依赖并构建内置资源
   ```
   bash install_dependency.sh
   ```

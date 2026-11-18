@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-for cmd in git gh make go; do
+for cmd in git gh make go bun; do
     if ! command -v "$cmd" >/dev/null 2>&1; then
         echo "Error: $cmd is not installed."
         exit 1
@@ -17,6 +17,24 @@ download_and_gzip_rule() {
     gzip "$tmp_rules_dir/$asset_name"
     mv -f "$tmp_rules_dir/$asset_name.gz" "$rules_dir/$asset_name.gz"
 }
+
+build_yacd() (
+    local src_dir
+    src_dir=$(mktemp -d)
+    trap 'rm -rf "$src_dir"' EXIT
+
+    git clone --depth 1 --branch master https://github.com/koitococo/Yacd-meta.git "$src_dir"
+    (
+        cd "$src_dir"
+        bun install --frozen-lockfile
+        bun --bun run build
+    )
+
+    mkdir -p ClashX/Resources/dashboard/yacd
+    cp -R "$src_dir/public/." ClashX/Resources/dashboard/yacd/
+    # Keep the bundled dashboard from registering a service worker for /ui/.
+    rm -f ClashX/Resources/dashboard/yacd/{CNAME,manifest.webmanifest,registerSW.js,sw.js}
+)
 
 echo "Building mihomo from koitococo/mihomo Meta..."
 rm -rf clash.meta
@@ -74,12 +92,10 @@ echo "install BundleMRS"
 download_and_gzip_rule "BundleMRS.7z"
 
 
-echo "install yacd dashboard"
+echo "Building Yacd from koitococo/Yacd-meta master..."
+build_yacd
+
 cd ClashX/Resources
-git clone -b gh-pages https://github.com/MetaCubeX/Yacd-meta.git dashboard/yacd --depth=1
-cd dashboard/yacd
-rm -rf *.webmanifest *.js CNAME .git
-cd ../../
 
 echo "install XD dashboard"
 git clone -b gh-pages https://github.com/metacubex/metacubexd.git dashboard/xd --depth=1
